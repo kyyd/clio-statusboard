@@ -1,11 +1,3 @@
 <% provide(:title, @user.display_name) %>
 <h1><%= @user.display_name %></h1>
 <p>Email:<%= @user.email %></p>
-<p>
-    <% if @user.logged_in %>
-        Online
-    <% else %>
-        Offline
-    <% end %>
-    <%= @user.logged_in %>
-</p>
