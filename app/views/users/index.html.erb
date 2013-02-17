@@ -13,13 +13,7 @@
             <td><%= link_to user.display_name, user %></td>
             <td><%= user.email %></td>
             <td><%= user.status %></td>
-            <td>
-                <% if user.logged_in %>
-                    Online
-                <% else %>
-                    Offline
-                <% end %>
-            </td>
+            <td><% if user.logged_in %>Online<% else %>Offline<% end %></td>
         </tr>
     <% end %>
 </ul>
