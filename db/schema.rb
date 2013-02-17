@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(:version => 20130217191322) do
     t.string   "password_digest"
     t.string   "status"
     t.string   "remember_token"
-    t.boolean  "logged_in"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

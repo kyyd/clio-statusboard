@@ -6,9 +6,9 @@
             <% if signed_in? %>
                 <li>Logged in as <%= current_user.email %></li>
                 <li><%= link_to "Users", '#' %></li>
-                <li><%= link_to "Sign out", '#', method: "delete" %></li>
+                <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
             <% else %>
-                <li><%= link_to "Sign in", '#' %></li>
+                <li><%= link_to "Sign in", signin_path %></li>
             <% end %>
         </ul>
     </nav>
