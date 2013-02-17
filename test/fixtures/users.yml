@@ -1,9 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  display_name: MyString
-  email: MyString
-  password_digest: MyString
-  status: MyString
+  id: 1
+  display_name: john doe
+  email: john.doe@example.com
+  password_digest: <%= BCrypt::Password.create("foobar") %>
+  status: In Office
+  remember_token: MyString
+  logged_in: false
+
+two:
+  id: 2
+  display_name: sam brown
+  email: sam.brown@example.com
+  password_digest: <%= BCrypt::Password.create("exploding") %>
+  status: At Lunch
   remember_token: MyString
   logged_in: false
