@@ -3,9 +3,9 @@
 <% if current_user? @user %>
     <p><%= link_to "Edit Display Name/Status", edit_user_path(current_user) %></p>
 <% end %>
-<table>
+<table class="profile">
     <tr>
-        <th>Display Name</th>
+        <th>Display Name:</th>
         <td><%= @user.display_name %></td>
     </tr>
     <tr>
