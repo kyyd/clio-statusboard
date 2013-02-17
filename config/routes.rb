@@ -4,6 +4,7 @@ ClioStatusboard::Application.routes.draw do
 
   get "user/new"
   match '/signup',  to: 'users#new'
+  get "users"
 
   resources :sessions, only: [:new, :create, :destroy]
   match '/signin',  to: 'sessions#new'

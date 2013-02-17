@@ -1,0 +1,17 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<table class="users">
+    <tr>
+        <th>User</th>
+        <th>Email</th>
+        <th>Status</th>
+    </tr>
+    <% @users.each do |user| %>
+        <tr>
+            <td><%= link_to user.display_name, user %></td>
+            <td><%= user.email %></td>
+            <td><%= user.status %></td>
+        </tr>
+    <% end %>
+</ul>
