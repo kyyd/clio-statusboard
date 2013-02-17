@@ -3,15 +3,23 @@
 
 <table class="users">
     <tr>
-        <th>User</th>
+        <th>Name</th>
         <th>Email</th>
-        <th>Status</th>
+        <th>Custom Status</th>
+        <th>Online Status</th>
     </tr>
     <% @users.each do |user| %>
         <tr>
             <td><%= link_to user.display_name, user %></td>
             <td><%= user.email %></td>
             <td><%= user.status %></td>
+            <td>
+                <% if user.logged_in %>
+                    Online
+                <% else %>
+                    Offline
+                <% end %>
+            </td>
         </tr>
     <% end %>
 </ul>
