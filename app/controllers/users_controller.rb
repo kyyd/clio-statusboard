@@ -16,7 +16,7 @@ class UsersController < ApplicationController
                          :password => params[:user][:password],
                          :password_confirmation => params[:user][:password_confirmation])
         if @user.save
-            # sign_in @user
+            sign_in @user
             flash[:success] = "Account created. Welcome to the Clio Status Board!"
             redirect_to @user
         else
