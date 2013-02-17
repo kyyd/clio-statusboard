@@ -1,0 +1,16 @@
+<% provide(:title, "Edit Account") %> 
+<h1>Update your account</h1>
+
+<div>
+  <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <%= f.label :display_name %>
+    <%= f.text_field :display_name %>
+
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+
+    <%= f.submit "Save changes"%>
+  <% end %>
+</div>

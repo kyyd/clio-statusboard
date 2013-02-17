@@ -3,8 +3,7 @@ ClioStatusboard::Application.routes.draw do
   root to: 'static_pages#home'
 
   get "user/new"
-  match '/signup',  to: 'users#new'
-  get "users"
+  match '/signup',  to: 'users#new'\
 
   resources :sessions, only: [:new, :create, :destroy]
   match '/signin',  to: 'sessions#new'

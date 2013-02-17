@@ -24,4 +24,24 @@ class UsersController < ApplicationController
     def index
         @users = User.all
     end
+
+    def edit
+        @user = User.find(params[:id])
+    end
+
+    def update
+        @user = User.find(params[:id])
+        # we are only updating display_name and status,
+        # and the only thing we need to validate is display name is not empty
+        if params[:user][:display_name] != ""
+            @user.update_column(:display_name, params[:user][:display_name])
+            @user.update_column(:status, params[:user][:status])
+            flash[:success] = "Account updated"
+            sign_in @user
+            redirect_to @user
+        else
+            flash[:error] = "Disply name cannot be empty"
+            render 'edit'
+        end
+    end
 end
