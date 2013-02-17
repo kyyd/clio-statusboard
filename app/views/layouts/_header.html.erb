@@ -1,21 +1,32 @@
 <header>
-    <%= link_to "sample app", root_path, id: "logo" %>
-    <nav>
-        <ul>
-            <li><%= link_to "Home", root_path %></li>
-            <% if signed_in? %>
-                <li><%= link_to "Users", users_path %></li>
-                <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-            <% else %>
-                <li><%= link_to "Sign in", signin_path %></li>
-            <% end %>
-        </ul>
-        <% if signed_in? %>
-            <ul>
-                <li>Logged in as <%= current_user.email %></li>
-                <li>Curent Status: <%= current_user.status %></li>
-                <li><%= link_to "Edit Account/Status", edit_user_path(current_user) %></li>
-            </ul>
-        <% end %>
-    </nav>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <%= link_to "Clio Status Board", root_path, class: "brand" %>
+            <div class="nav-collapse collapse">
+                <% if signed_in? %>
+                    <p class="navbar-text pull-right">
+                      Signed in as <%= link_to current_user.email, current_user %>
+                    </p>
+                <% end %>
+                <ul class="nav">
+                    <li><%= link_to "Home", root_path %></li>
+                    <% if signed_in? %>
+                        <li><%= link_to "Users", users_path %></li>
+                        <li><%= link_to "Edit Status", edit_user_path(current_user) %></li>
+                        <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+                    <% else %>
+                        <li><%= link_to "Sign in", signin_path %></li>
+                    <% end %>
+                </ul>
+            </div><!--/.nav-collapse -->
+            <div>
+        </div>
+    </div>
+</div>
 </header>
