@@ -7,11 +7,3 @@ one:
   status: MyString
   remember_token: MyString
   logged_in: false
-
-two:
-  display_name: MyString
-  email: MyString
-  password_digest: MyString
-  status: MyString
-  remember_token: MyString
-  logged_in: false
