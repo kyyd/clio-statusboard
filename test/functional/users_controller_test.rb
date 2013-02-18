@@ -21,4 +21,14 @@ class UsersControllerTest < ActionController::TestCase
         assert_redirected_to("/signin")
     end
 
+    test "should not be able to access users profile page" do
+        get(:show, {'id' => users(:sam).id})
+        assert_redirected_to("/signin")
+    end
+
+    test "should not be able to access users edit page" do
+        get(:edit, {'id' => users(:sam).id})
+        assert_redirected_to("/signin")
+    end
+
 end
