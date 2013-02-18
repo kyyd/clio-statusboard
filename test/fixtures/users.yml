@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
+john:
   id: 1
   display_name: john doe
   email: john.doe@example.com
@@ -9,7 +9,7 @@ one:
   remember_token: MyString
   logged_in: false
 
-two:
+sam:
   id: 2
   display_name: sam brown
   email: sam.brown@example.com
